@@ -1,0 +1,986 @@
+{
+  "scenarios": {
+    "S1_基础会话_后端项目": {
+      "desc": "后端项目每次对话的固定消耗",
+      "file_count": 6,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        }
+      ],
+      "total": {
+        "lines": 216,
+        "chars": 4996,
+        "tokens": 3287
+      }
+    },
+    "S2_基础会话_前端项目": {
+      "desc": "前端项目每次对话的固定消耗",
+      "file_count": 6,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        }
+      ],
+      "total": {
+        "lines": 219,
+        "chars": 5080,
+        "tokens": 3410
+      }
+    },
+    "S3_基础会话_无globs全加载": {
+      "desc": "rules 无 globs 配置时全部加载（当前现状）",
+      "file_count": 8,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        }
+      ],
+      "total": {
+        "lines": 308,
+        "chars": 7354,
+        "tokens": 4571
+      }
+    },
+    "S4_ot-product命令": {
+      "desc": "/ot-product 需求分析",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-product.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 468,
+          "tokens": 393
+        },
+        {
+          "file": ".claude/agents/product.md",
+          "exists": true,
+          "lines": 109,
+          "chars": 1574,
+          "tokens": 1463
+        }
+      ],
+      "total": {
+        "lines": 442,
+        "chars": 9396,
+        "tokens": 6427
+      }
+    },
+    "S5_ot-plan命令": {
+      "desc": "/ot-plan 规划设计",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-plan.md",
+          "exists": true,
+          "lines": 27,
+          "chars": 547,
+          "tokens": 448
+        },
+        {
+          "file": ".claude/agents/plan.md",
+          "exists": true,
+          "lines": 125,
+          "chars": 1790,
+          "tokens": 1506
+        }
+      ],
+      "total": {
+        "lines": 460,
+        "chars": 9691,
+        "tokens": 6525
+      }
+    },
+    "S6_ot-develop命令": {
+      "desc": "/ot-develop 开发实现",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-develop.md",
+          "exists": true,
+          "lines": 26,
+          "chars": 492,
+          "tokens": 408
+        },
+        {
+          "file": ".claude/agents/develop.md",
+          "exists": true,
+          "lines": 97,
+          "chars": 1740,
+          "tokens": 1526
+        }
+      ],
+      "total": {
+        "lines": 431,
+        "chars": 9586,
+        "tokens": 6505
+      }
+    },
+    "S7_ot-testing命令": {
+      "desc": "/ot-testing 测试验证",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-testing.md",
+          "exists": true,
+          "lines": 28,
+          "chars": 505,
+          "tokens": 403
+        },
+        {
+          "file": ".claude/agents/testing.md",
+          "exists": true,
+          "lines": 147,
+          "chars": 2734,
+          "tokens": 1856
+        }
+      ],
+      "total": {
+        "lines": 483,
+        "chars": 10593,
+        "tokens": 6830
+      }
+    },
+    "S8_ot-review命令": {
+      "desc": "/ot-review 全流程审查",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-review.md",
+          "exists": true,
+          "lines": 28,
+          "chars": 527,
+          "tokens": 425
+        },
+        {
+          "file": ".claude/agents/review.md",
+          "exists": true,
+          "lines": 167,
+          "chars": 2693,
+          "tokens": 2183
+        }
+      ],
+      "total": {
+        "lines": 503,
+        "chars": 10574,
+        "tokens": 7179
+      }
+    },
+    "S9_完整pipeline": {
+      "desc": "/openteam pipeline 全流程（调度器 + 全部 Agent）",
+      "file_count": 19,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/openteam.md",
+          "exists": true,
+          "lines": 115,
+          "chars": 2225,
+          "tokens": 1700
+        },
+        {
+          "file": ".claude/commands/ot-product.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 468,
+          "tokens": 393
+        },
+        {
+          "file": ".claude/agents/product.md",
+          "exists": true,
+          "lines": 109,
+          "chars": 1574,
+          "tokens": 1463
+        },
+        {
+          "file": ".claude/commands/ot-plan.md",
+          "exists": true,
+          "lines": 27,
+          "chars": 547,
+          "tokens": 448
+        },
+        {
+          "file": ".claude/agents/plan.md",
+          "exists": true,
+          "lines": 125,
+          "chars": 1790,
+          "tokens": 1506
+        },
+        {
+          "file": ".claude/commands/ot-develop.md",
+          "exists": true,
+          "lines": 26,
+          "chars": 492,
+          "tokens": 408
+        },
+        {
+          "file": ".claude/agents/develop.md",
+          "exists": true,
+          "lines": 97,
+          "chars": 1740,
+          "tokens": 1526
+        },
+        {
+          "file": ".claude/commands/ot-testing.md",
+          "exists": true,
+          "lines": 28,
+          "chars": 505,
+          "tokens": 403
+        },
+        {
+          "file": ".claude/agents/testing.md",
+          "exists": true,
+          "lines": 147,
+          "chars": 2734,
+          "tokens": 1856
+        },
+        {
+          "file": ".claude/commands/ot-review.md",
+          "exists": true,
+          "lines": 28,
+          "chars": 527,
+          "tokens": 425
+        },
+        {
+          "file": ".claude/agents/review.md",
+          "exists": true,
+          "lines": 167,
+          "chars": 2693,
+          "tokens": 2183
+        }
+      ],
+      "total": {
+        "lines": 1202,
+        "chars": 22649,
+        "tokens": 16882
+      }
+    },
+    "S10_ot-commit工具": {
+      "desc": "/ot-commit 智能提交",
+      "file_count": 9,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-commit.md",
+          "exists": true,
+          "lines": 57,
+          "chars": 829,
+          "tokens": 638
+        }
+      ],
+      "total": {
+        "lines": 365,
+        "chars": 8183,
+        "tokens": 5209
+      }
+    },
+    "S11_ot-create-api生成": {
+      "desc": "/ot-create-api 生成接口",
+      "file_count": 9,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/ot-create-api.md",
+          "exists": true,
+          "lines": 57,
+          "chars": 921,
+          "tokens": 586
+        }
+      ],
+      "total": {
+        "lines": 365,
+        "chars": 8275,
+        "tokens": 5157
+      }
+    },
+    "S12_openteam_help": {
+      "desc": "/openteam help 查看帮助",
+      "file_count": 10,
+      "files": [
+        {
+          "file": "CLAUDE.md",
+          "exists": true,
+          "lines": 73,
+          "chars": 1359,
+          "tokens": 927
+        },
+        {
+          "file": ".claude/rules/git-workflow.md",
+          "exists": true,
+          "lines": 24,
+          "chars": 670,
+          "tokens": 478
+        },
+        {
+          "file": ".claude/rules/security.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 328,
+          "tokens": 338
+        },
+        {
+          "file": ".claude/rules/testing.md",
+          "exists": true,
+          "lines": 15,
+          "chars": 365,
+          "tokens": 383
+        },
+        {
+          "file": ".claude/rules/context-backend.md",
+          "exists": true,
+          "lines": 64,
+          "chars": 1542,
+          "tokens": 761
+        },
+        {
+          "file": ".claude/rules/code-style-backend.md",
+          "exists": true,
+          "lines": 25,
+          "chars": 732,
+          "tokens": 400
+        },
+        {
+          "file": ".claude/rules/context-frontend.md",
+          "exists": true,
+          "lines": 63,
+          "chars": 1562,
+          "tokens": 810
+        },
+        {
+          "file": ".claude/rules/code-style-frontend.md",
+          "exists": true,
+          "lines": 29,
+          "chars": 796,
+          "tokens": 474
+        },
+        {
+          "file": ".claude/commands/openteam.md",
+          "exists": true,
+          "lines": 115,
+          "chars": 2225,
+          "tokens": 1700
+        },
+        {
+          "file": ".claude/docs/openteam-guide.md",
+          "exists": true,
+          "lines": 163,
+          "chars": 3411,
+          "tokens": 1929
+        }
+      ],
+      "total": {
+        "lines": 586,
+        "chars": 12990,
+        "tokens": 8200
+      }
+    }
+  },
+  "duplicate_count": 4,
+  "duplicates_sample": [
+    {
+      "file1": ".claude/rules/code-style-backend.md",
+      "rule1": "8. 公共类和方法必须添加 JavaDoc 注释",
+      "file2": ".claude/rules/context-backend.md",
+      "rule2": "- 公共类和方法必须添加 JavaDoc 注释",
+      "similarity": 1.0
+    },
+    {
+      "file1": ".claude/rules/code-style-backend.md",
+      "rule1": "9. Controller 方法必须添加 OpenAPI 注解（`@Operation`、`@Parameter`）",
+      "file2": ".claude/rules/context-backend.md",
+      "rule2": "- Controller 方法必须添加 OpenAPI 注解（`@Operation`、`@Parameter`）",
+      "similarity": 1.0
+    },
+    {
+      "file1": ".claude/rules/code-style-frontend.md",
+      "rule1": "1. 只使用 Composition API + `<script setup>`，禁止 Options API",
+      "file2": ".claude/rules/context-frontend.md",
+      "rule2": "- 只使用 Composition API + `<script setup>`，**禁止 Options API**",
+      "similarity": 1.0
+    },
+    {
+      "file1": ".claude/rules/code-style-frontend.md",
+      "rule1": "2. 只使用 pnpm 管理依赖，禁止 npm / yarn",
+      "file2": ".claude/rules/context-frontend.md",
+      "rule2": "- 只使用 Composition API + `<script setup>`，**禁止 Options API**",
+      "similarity": 0.67
+    }
+  ]
+}

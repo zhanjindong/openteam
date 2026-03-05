@@ -46,6 +46,13 @@ Controller → Service(Interface) → ServiceImpl → Mapper/Client → Database
 请求 → AuthFilter(鉴权) → TraceIdInterceptor(链路追踪) → Controller → Service → Mapper/Client → 响应
 ```
 
+## 命名规范
+
+- 类名 PascalCase，后缀遵循约定: Controller / IService / ServiceImpl / Mapper / Entity / DTO / VO / Client / Utils / Config / Enum / Constants
+- 方法名 camelCase，查询 `get/query/find/list`、创建 `create/add/save`、更新 `update/modify`、删除 `delete/remove`、布尔 `is/has/can`
+- 常量 UPPER_SNAKE_CASE
+- Service 层必须定义接口（I*Service），实现类为 *ServiceImpl
+
 ## 核心约定
 
 - 所有实体继承 `BaseEntity`（自动填充 created_at/updated_at/created_by/updated_by/logic_delete）
@@ -53,9 +60,11 @@ Controller → Service(Interface) → ServiceImpl → Mapper/Client → Database
 - 统一响应体: `{ code, message, data, timestamp, traceId }`
 - 认证: JWT + SSO，用户上下文通过 `UserContext`（ThreadLocal）管理，请求结束自动清理
 - 日志: `@Slf4j` + TraceId，业务异常 warn、系统异常 error
-- 使用 Lombok 注解简化样板代码
+- 使用 Lombok 简化样板代码，禁止手写 getter/setter/toString
 - 公共类和方法必须添加 JavaDoc 注释
 - Controller 方法必须添加 OpenAPI 注解（`@Operation`、`@Parameter`）
+- 使用 `@Valid` 进行请求参数校验，禁止在 Controller 中手动校验参数
+- 禁止跨层调用: Controller 不能直接调用 Mapper，Service 不能直接操作 HttpServletRequest
 
 ## 禁止修改的核心目录
 
