@@ -75,6 +75,11 @@
     ],
     "PostToolUse": [
       {
+        "matcher": "Bash(command matches 'git commit')",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/post-commit-handoff-reminder.sh" }],
+        "description": "【记忆型】提交后提醒增量更新 handoff"
+      },
+      {
         "matcher": "Edit(file_path matches '\\.(java)$')",
         "hooks": [{ "type": "command", "command": "bash .claude/hooks/check-system-out.sh" }],
         "description": "【一致性型】后端: 编辑 Java 文件后检查 System.out"
@@ -104,7 +109,7 @@
       {
         "matcher": "",
         "hooks": [{ "type": "command", "command": "bash .claude/hooks/memory-save.sh" }],
-        "description": "【记忆持久化】会话结束时提醒保存关键上下文到 .claude/memory/"
+        "description": "【记忆持久化】会话结束时自动刷新 git 段落 + 保留语义段落"
       }
     ],
     "Notification": [
