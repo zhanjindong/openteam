@@ -30,7 +30,7 @@ product（需求分析）→ plan（技术设计）→ develop（开发实现）
 - `DESIGN.md` v1.1 — 需求 + 技术方案
 - `TODO.md` — 16 个开发任务，进度 0/16
 
-此时关闭会话，下次要从 develop 阶段继续。
+此时关闭会话，或在claude会话中git commit提交记录，会自动保存上下文信息到.claude/memory下，下次要从 develop 阶段继续。
 
 ### 会话结束时自动发生的事
 

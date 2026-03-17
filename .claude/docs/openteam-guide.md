@@ -1,8 +1,11 @@
 # OpenTeam 使用指南
 
+> 版本: 0.2
+> 最后更新: 2026-03-17
+
 ## 简介
 
-OpenTeam 是一个基于 Claude Code 的 **AI 研发调度中心**，通过 5 个专业 Agent 协作完成软件研发全流程。支持三种执行模式适配不同场景。
+OpenTeam 是一个基于 Claude Code 的 **AI 研发调度中心**，通过 5 个专业 Agent 协作完成软件研发全流程。支持三种执行模式适配不同场景，内置跨会话记忆持久化机制，支持多人接续开发。
 
 ## 安装方式
 
@@ -20,6 +23,8 @@ cp -r openteam/*/ your-project/
 - `.claude/rules/` — 项目规范文件
 - `.claude/hooks/` — 自动化护栏脚本
 - `CLAUDE.md` — AI 协作指南
+
+---
 
 ## 命令速查表
 
@@ -51,6 +56,7 @@ cp -r openteam/*/ your-project/
 | `/ot-refactor` | 安全重构 |
 | `/ot-debug` | 系统排查 |
 | `/ot-changelog` | 变更日志生成 |
+| `/ot-clear` | 清理项目状态，启动新项目 |
 
 ### 生成命令
 
@@ -99,6 +105,75 @@ cp -r openteam/*/ your-project/
 
 ---
 
+## 跨会话接续开发
+
+> 详细说明见 `.claude/docs/continuation-guide.md`
+
+### 记忆三件套
+
+Claude Code 每次会话独立，上下文在会话结束后丢失。OpenTeam 通过三份文件实现跨会话接续：
+
+| 文件 | 作用 | 谁维护 |
+|------|------|--------|
+| `DESIGN.md` | 需求规格 + 技术方案 | product / plan Agent |
+| `TODO.md` | 任务列表 + 进度（checkbox） | plan 生成，develop 更新 |
+| `.claude/memory/handoff.md` | 工作交接（状态、决策、注意事项、下一步） | Claude + Stop hook |
+
+新会话启动时 Claude 自动读取这三份文件，恢复完整上下文。
+
+### handoff.md 三层写入架构
+
+handoff.md 由 Claude 和 Stop hook 协作维护，分为 7 个段落：
+
+| 段落 | 谁写 | 时机 |
+|------|------|------|
+| 元数据（时间/用户/分支） | Stop hook 自动 | 每次会话结束 |
+| 本次改动 | Stop hook 自动 | 每次会话结束 |
+| 最近提交 | Stop hook 自动 | 每次会话结束 |
+| 当前状态 | Claude | 里程碑 + 会话结束 |
+| 关键决策 | Claude | 做决策时追加 |
+| 注意事项 | Claude | 发现问题时追加 |
+| 下一步 | Claude | 里程碑 + 会话结束 |
+
+三级触发机制：
+
+| 级别 | 触发条件 | 写入要求 |
+|------|---------|---------|
+| 里程碑 | 功能完成、重要决策、踩坑解决 | 必须写入 |
+| 会话结束 | 用户说"先到这"等结束信号 | 必须写入（兜底） |
+| 增量 | 每 3 次 commit / 上下文压缩时 | 建议写入 |
+
+### 接续操作方式
+
+| 场景 | 操作 |
+|------|------|
+| 继续上次的完整流水线 | `/openteam pipeline 继续` |
+| 只做开发 | `/ot-develop` |
+| 从指定任务恢复 | `/ot-develop 从 T07 开始` |
+| 自然语言接续 | `继续开发，上次做到哪了？` |
+| 查看当前进度 | 读 `TODO.md` 或问 Claude |
+| 查看交接信息 | 读 `.claude/memory/handoff.md` |
+
+### 项目清理与重新开始
+
+当需要清理旧项目状态、启动新项目时：
+
+```
+/ot-clear
+```
+
+清理范围：`handoff.md` + `DESIGN.md` + `TODO.md`。框架配置（commands/agents/rules/hooks）不受影响。
+
+支持参数：
+
+| 参数 | 效果 |
+|------|------|
+| `--keep-design` | 保留 DESIGN.md（同项目重新规划） |
+| `--no-commit` | 只删文件，不自动提交 |
+| `--all` | 跳过确认直接清理 |
+
+---
+
 ## Hooks 自动化护栏
 
 ### 阻断型
@@ -120,12 +195,13 @@ cp -r openteam/*/ your-project/
 | `check-skip-tests-reminder.sh` | 跳过测试时提醒 |
 | `check-system-out.sh` | 检查 System.out |
 | `check-console-log.sh` | 扫描 console.log |
+| `post-commit-handoff-reminder.sh` | 提交后提醒更新 handoff |
 
 ### 会话管理
 
 | 护栏 | 说明 |
 |------|------|
-| `memory-save.sh` | 会话结束时持久化上下文 |
+| `memory-save.sh` | 会话结束时自动刷新 handoff git 段落 |
 | `strategic-compact.sh` | 上下文接近限制时触发压缩 |
 
 ---
@@ -136,8 +212,10 @@ cp -r openteam/*/ your-project/
 |------|------|
 | `DESIGN.md` | 需求规格 + 技术方案，随 product/plan 阶段生成和更新 |
 | `TODO.md` | 任务列表 + 进度追踪，plan 生成，develop 更新 |
-| `.claude/memory/` | 跨会话知识持久化，详见 `.claude/hooks/memory-persistence.md` |
+| `.claude/memory/handoff.md` | 跨会话工作交接，Claude + Stop hook 协作维护 |
 | `CLAUDE.md` | AI 协作指南，项目入口文件 |
+| `.claude/docs/continuation-guide.md` | 接续开发详细指南（含实际案例） |
+| `.claude/hooks/memory-persistence.md` | 记忆持久化机制完整说明 |
 
 ---
 
@@ -161,3 +239,12 @@ cp -r openteam/*/ your-project/
 3. 输入 `/openteam` 选择模式开始工作
 
 **推荐**: 首次使用选择 `pipeline` 模式体验完整流程，熟悉后切换到 `team` 模式提高效率。
+
+---
+
+## 版本历史
+
+| 版本 | 日期 | 变更 |
+|------|------|------|
+| 0.2 | 2026-03-17 | 新增跨会话接续开发说明、handoff 三层架构、`/ot-clear` 命令、`post-commit-handoff-reminder` hook |
+| 0.1 | 2026-03-17 | 初始版本，5 Agent + 3 模式 + 命令体系 + Hooks 护栏 |
