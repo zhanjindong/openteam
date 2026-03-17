@@ -1,6 +1,6 @@
 # 工作交接
 
-> 最后更新: 2026-03-17 14:19
+> 最后更新: 2026-03-17 15:06
 > 更新者: jdzhan
 > 分支: master
 
@@ -10,17 +10,17 @@
 - order/ 目录尚未创建，等待 develop Agent 开始编码
 
 ## 本次改动
+- `.claude/commands/ot-clear.md`
+- `.claude/docs/continuation-guide.md`
 - `.claude/memory/handoff.md`
-- `DESIGN.md`
-- `TODO.md`
 
 ## 最近提交
 ```
+512b221 docs(order): 完成订单管理系统需求分析与技术设计
 fd55c44 chore(memory): 升级 handoff 持久化为三层架构
 9f9a29e chore: 忽略 openteam.zip 临时压缩包
 a48d373 chore: 完善 AI 协作框架配置与 handoff 持久化机制
 b87fe76 添加/ot-page-style，用于只修改页面样式
-e917079 refactor: 优化 OpenTeam spec token 消耗，整体下降 40.4%
 ```
 
 ## 关键决策
