@@ -25,5 +25,5 @@ build/
 *.log
 logs/
 
-# Claude Code memory (session-specific)
-.claude/memory/
+# Claude Code memory (team-shared via git)
+# .claude/memory/ 已取消排除，用于团队间共享开发上下文

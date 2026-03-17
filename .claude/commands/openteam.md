@@ -46,5 +46,7 @@ description: OpenTeam 研发调度中心 — 三种模式调度 Agent 团队：p
 - 执行前读取 `.claude/memory/` 和 DESIGN.md / TODO.md 了解当前状态
 - 长任务按 strategic-compact 协议主动压缩上下文
 - Agent 阻塞时暂停汇报；用户中断时保存进度到 TODO.md 和 memory/
+- Agent 阶段切换时自动更新 `.claude/memory/handoff.md` 传递上下文
+- 用户中断时，除保存 TODO.md 外，同时更新 handoff.md
 
 $ARGUMENTS
