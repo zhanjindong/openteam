@@ -25,5 +25,8 @@ build/
 *.log
 logs/
 
+# Archives
+openteam.zip
+
 # Claude Code memory (team-shared via git)
 # .claude/memory/ 已取消排除，用于团队间共享开发上下文
